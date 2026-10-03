@@ -4,11 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YUEN Yu Yung (Emma) — Achievements</title>
+<meta name="description" content="YUEN Yu Yung (Emma) — Decision Analytics and Artificial Intelligence student at HKUST. Internships at Towngas, MTR and DKSH; optimisation, automation and business-intelligence projects.">
+<meta name="theme-color" content="#003366">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_HK">
+<meta property="og:title" content="YUEN Yu Yung (Emma) — Achievements">
+<meta property="og:description" content="Decision Analytics and Artificial Intelligence student at HKUST. Internships at Towngas, MTR and DKSH.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="YUEN Yu Yung (Emma) — Achievements">
+<meta name="twitter:description" content="Decision Analytics and Artificial Intelligence student at HKUST. Internships at Towngas, MTR and DKSH.">
+<!-- TODO(you): once this page has a deployed URL, add an absolute og:image and og:url here. Social
+     previews require absolute URLs, so a relative path would silently fail and is deliberately omitted. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23003366'/%3E%3Ctext x='32' y='44' font-family='Segoe UI,Helvetica,Arial,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <style>
   :root {
     --ink: #1c2733;
     --muted: #5b6b7b;
     --line: #e4e9ef;
+    --line-strong: #cfd8e3;
     --paper: #ffffff;
     --bg: #f6f8fb;
     --navy: #003366;
@@ -16,33 +32,59 @@
     --intern: #0e7c86;
     --extra: #b5452f;
     --proj: #7a5bb0;
-    --radius: 14px;
-    --shadow: 0 6px 24px rgba(20, 40, 60, .08);
-    --shadow-hover: 0 10px 30px rgba(20, 40, 60, .14);
-    --font: "Segoe UI", "Inter", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .05), 0 8px 24px rgba(0, 0, 0, .07);
+    --shadow-hover: 0 2px 4px rgba(0, 0, 0, .06), 0 14px 32px rgba(0, 0, 0, .11);
+    --font: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    --step: .18s;
+    --ease: cubic-bezier(.2, .7, .3, 1);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   body {
     font-family: var(--font);
+    font-size: 15px;
     background: var(--bg);
     color: var(--ink);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
   }
+  ::selection { background: rgba(0, 51, 102, .16); }
+  p, li, h1, h2, h3, h4 { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
+  img { max-width: 100%; }
+
+  /* ---------- Focus, skip link, screen-reader text ---------- */
+  :focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .hero :focus-visible { outline-color: #ffffff; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    margin: -1px; padding: 0; border: 0;
+    clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+  }
+  .skip {
+    position: absolute; left: 12px; top: -60px; z-index: 10;
+    background: #003366; color: #fff; text-decoration: none;
+    font-weight: 600; font-size: 14px; padding: 10px 16px;
+    border-radius: var(--radius-sm); transition: top var(--step) var(--ease);
+  }
+  .skip:focus { top: 12px; }
 
   /* ---------- Hero ---------- */
   .hero {
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, #124d80 100%);
     color: #fff;
-    padding: 56px 24px 48px;
+    padding: 52px 24px 44px;
   }
   .hero-inner {
     max-width: 1080px;
     margin: 0 auto;
     display: flex;
     gap: 36px;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
   .photo-wrap {
@@ -51,60 +93,86 @@
     height: 168px;
     border-radius: 50%;
     overflow: hidden;
-    background: rgba(255,255,255,.12);
-    border: 4px solid rgba(255,255,255,.55);
-    box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    background: rgba(255, 255, 255, .12);
+    border: 3px solid rgba(255, 255, 255, .55);
     position: relative;
   }
   .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .photo-fallback {
     position: absolute; inset: 0;
-    display: flex; flex-direction: column;
+    display: none;
     align-items: center; justify-content: center;
-    color: rgba(255,255,255,.85);
-    text-align: center; padding: 10px; font-size: 12px;
+    background: #0a2b4d;
+    font-size: 40px; font-weight: 700; letter-spacing: .04em;
+    color: #ffffff;
   }
-  .photo-fallback svg { width: 56px; height: 56px; opacity: .9; margin-bottom: 6px; }
-  .hero-info { flex: 1 1 380px; min-width: 280px; }
+  .photo-wrap.is-fallback .photo-fallback { display: flex; }
+  .hero-info { flex: 1 1 400px; min-width: 280px; }
   .hero-info h1 {
-    font-size: clamp(26px, 4.5vw, 40px);
-    letter-spacing: .5px; font-weight: 700; margin-bottom: 4px;
+    font-size: clamp(28px, 4.2vw, 38px);
+    letter-spacing: -.02em; font-weight: 700; line-height: 1.15;
+    margin-bottom: 6px;
   }
-  .hero-info .tagline { color: #cfe3f4; font-size: 15px; margin-bottom: 14px; }
+  .hero-info .tagline {
+    color: #cfe3f4; font-size: 14px; font-weight: 500;
+    letter-spacing: .01em; margin-bottom: 10px;
+  }
+  .hero-info .lede {
+    color: #eaf3fb; font-size: 15.5px; line-height: 1.55;
+    max-width: 62ch; margin-bottom: 16px;
+  }
   .contact {
     list-style: none; display: flex; flex-wrap: wrap;
-    gap: 8px 22px; font-size: 14px; color: #e3eef8; margin-bottom: 20px;
+    gap: 10px 22px; font-size: 14px; color: #e3eef8; margin-bottom: 18px;
   }
-  .contact a { color: #fff; text-decoration: none; }
-  .contact a:hover { text-decoration: underline; }
+  .contact li { display: inline-flex; align-items: center; gap: 7px; }
+  .contact svg { flex: 0 0 auto; opacity: .8; }
+  .contact a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .contact a:hover { text-decoration-thickness: 2px; }
   .edu-card {
-    background: rgba(255,255,255,.10);
-    border: 1px solid rgba(255,255,255,.22);
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .22);
     border-radius: var(--radius);
-    padding: 14px 18px; font-size: 13.5px; max-width: 640px;
+    padding: 14px 18px; font-size: 13.5px; max-width: 660px;
   }
-  .edu-card strong { color: #fff; }
-  .edu-card .edu-line { color: #d8e8f5; }
+  .edu-card strong { color: #eaf3fb; font-weight: 600; }
+  .edu-line { color: #d8e8f5; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; color: #002244;
+    font-size: 14px; font-weight: 600;
+    padding: 10px 18px; min-height: 44px;
+    border: 1px solid #fff; border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background var(--step) var(--ease), color var(--step) var(--ease);
+  }
+  .btn:hover { background: #e8eef5; border-color: #e8eef5; }
+  .btn-ghost { background: #0b3a63; border-color: #3d7ba8; color: #ffffff; }
+  .btn-ghost:hover { background: #124d80; border-color: #6aa3cc; }
 
   /* ---------- Layout ---------- */
-  .page { max-width: 1080px; margin: 0 auto; padding: 32px 24px 60px; }
+  .page { max-width: 1080px; margin: 0 auto; padding: 36px 24px 64px; }
+  .section-heading {
+    font-size: 20px; font-weight: 700; letter-spacing: -.01em;
+    margin-bottom: 16px;
+  }
   .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
   .tab {
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-strong);
     background: var(--paper);
     color: var(--muted);
-    padding: 9px 18px;
+    padding: 10px 18px; min-height: 44px;
     border-radius: 999px;
     font: 600 13.5px var(--font);
     cursor: pointer;
-    transition: all .18s ease;
+    transition: border-color var(--step) var(--ease), color var(--step) var(--ease), background var(--step) var(--ease);
   }
   .tab:hover { border-color: var(--navy); color: var(--navy); }
-  .tab.active {
+  .tab[aria-pressed="true"] {
     background: var(--navy);
     border-color: var(--navy);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(0,51,102,.25);
   }
   .layout {
     display: grid;
@@ -112,96 +180,90 @@
     gap: 34px;
     align-items: start;
   }
-  @media (max-width: 860px) {
-    .layout { grid-template-columns: 1fr; }
-    .hero-inner { justify-content: center; text-align: center; }
-    .contact { justify-content: center; }
-  }
 
   /* ---------- Timeline ---------- */
-  .timeline { position: relative; padding: 6px 0 6px 30px; }
+  .timeline { list-style: none; position: relative; padding: 4px 0 4px 30px; }
   .timeline::before {
     content: "";
-    position: absolute; left: 9px; top: 8px; bottom: 8px;
-    width: 3px; border-radius: 3px;
-    background: linear-gradient(180deg, var(--extra), var(--intern), var(--proj));
-    opacity: .35;
+    position: absolute; left: 9px; top: 10px; bottom: 10px;
+    width: 2px; border-radius: 2px;
+    background: var(--line-strong);
   }
-  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item { position: relative; margin-bottom: 16px; }
   .tl-item::before {
     content: "";
-    position: absolute; left: -30px; top: 22px;
-    width: 13px; height: 13px; border-radius: 50%;
-    background: #fff;
+    position: absolute; left: -30px; top: 24px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--paper);
     border: 3px solid var(--tl-color, var(--navy));
-    box-shadow: 0 0 0 3px rgba(255,255,255,.9);
     z-index: 1;
-    transition: transform .18s ease;
+    transition: transform var(--step) var(--ease);
   }
   .tl-item[data-category="internship"]      { --tl-color: var(--intern); }
   .tl-item[data-category="extracurricular"] { --tl-color: var(--extra); }
   .tl-item[data-category="project"]         { --tl-color: var(--proj); }
   .tl-card {
+    display: block;
     background: var(--paper);
     border: 1px solid var(--line);
-    border-left: 4px solid var(--tl-color, var(--navy));
     border-radius: var(--radius);
-    padding: 14px 18px;
-    cursor: pointer;
+    padding: 14px 18px 12px;
+    color: inherit;
+    text-decoration: none;
     box-shadow: var(--shadow);
-    transition: transform .18s ease, box-shadow .18s ease;
-    user-select: none;
+    transition: transform var(--step) var(--ease), box-shadow var(--step) var(--ease), border-color var(--step) var(--ease);
   }
   .tl-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
-  .tl-item.active .tl-card {
-    border-color: var(--tl-color, var(--navy));
-    box-shadow: 0 0 0 3px var(--tl-ring, rgba(0,80,140,.18)), var(--shadow-hover);
+  .tl-card[aria-current="true"] {
+    border-color: var(--navy);
+    box-shadow: inset 0 0 0 1px var(--navy), var(--shadow-hover);
   }
-  .tl-item.active::before { transform: scale(1.35); }
+  .tl-item:has(.tl-card[aria-current="true"])::before { transform: scale(1.3); }
+  .tl-card[aria-current="true"] .tl-hint { color: var(--navy); }
+  .tl-card[aria-current="true"] svg.tl-chevron { transform: rotate(180deg); }
   .tl-period {
     display: inline-block;
     font: 700 11.5px var(--font);
-    letter-spacing: .4px; text-transform: uppercase;
-    color: var(--tl-color, var(--navy));
+    letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted);
     background: var(--bg);
     padding: 3px 9px;
-    border-radius: 6px;
-    margin-bottom: 6px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 7px;
   }
-  .tl-card h3 { font-size: 16px; line-height: 1.3; margin-bottom: 2px; }
-  .tl-org { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .tl-title {
+    display: block;
+    font-size: 15.5px; font-weight: 600; line-height: 1.32;
+    margin-bottom: 2px;
+  }
+  .tl-org { display: block; font-size: 13px; color: var(--muted); }
+  .tl-metric {
+    display: block; font-size: 13px; font-weight: 500;
+    color: var(--ink); margin-top: 8px;
+  }
+  .tl-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-top: 10px;
+    padding-top: 9px; border-top: 1px solid var(--line);
+  }
   .tl-cat {
-    display: inline-block;
-    font: 600 11px var(--font);
+    font: 600 12px var(--font);
     color: var(--tl-color, var(--navy));
-    letter-spacing: .3px;
+    letter-spacing: .01em;
   }
-  .tl-empty {
-    display: none;
-    padding: 40px 20px;
-    text-align: center; color: var(--muted);
-    background: var(--paper);
-    border: 1px dashed var(--line);
-    border-radius: var(--radius);
+  .tl-hint {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; font-weight: 600; color: var(--muted);
+    white-space: nowrap;
   }
-  .tl-empty.show { display: block; }
+  .tl-chevron { transition: transform var(--step) var(--ease); }
 
   /* ---------- Details ---------- */
   .details { position: sticky; top: 24px; }
-  .placeholder {
-    background: var(--paper);
-    border: 1px dashed var(--line);
-    border-radius: var(--radius);
-    padding: 60px 30px;
-    text-align: center; color: var(--muted);
-  }
-  .placeholder svg { width: 46px; height: 46px; opacity: .45; margin-bottom: 10px; }
-  .detail { display: none; animation: fadeUp .28s ease; }
-  .detail.show { display: block; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  .detail { display: block; animation: fadeUp .28s var(--ease); }
+  .js .detail { display: none; }
+  .js .detail.show { display: block; }
+  .detail + .detail { margin-top: 22px; }
   .detail-card {
     background: var(--paper);
     border: 1px solid var(--line);
@@ -210,302 +272,416 @@
     overflow: hidden;
   }
   .detail-head {
-    padding: 24px 26px 18px;
-    background: linear-gradient(180deg, #fbfcfe, #ffffff);
+    padding: 22px 26px 18px;
     border-bottom: 1px solid var(--line);
   }
-  .cat-badge {
-    display: inline-block;
+  .detail-head h3 {
+    font-size: 21px; line-height: 1.25; font-weight: 700;
+    letter-spacing: -.01em; margin-bottom: 5px;
+  }
+  .detail-cat {
+    display: inline-flex; align-items: center; gap: 6px;
     font: 700 11px var(--font);
-    letter-spacing: .5px; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 999px;
-    color: #fff; margin-bottom: 10px;
+    letter-spacing: .07em; text-transform: uppercase;
+    color: var(--cat-color, var(--navy));
   }
-  .cat-badge.internship      { background: var(--intern); }
-  .cat-badge.extracurricular { background: var(--extra); }
-  .cat-badge.project         { background: var(--proj); }
-  .detail-head h2 { font-size: 22px; line-height: 1.25; margin-bottom: 4px; }
-  .detail-org { font-size: 14.5px; color: var(--muted); margin-bottom: 6px; }
-  .detail-meta { font-size: 13px; color: var(--muted); }
-  .detail-meta span { margin-right: 14px; white-space: nowrap; }
-  .detail-body { padding: 22px 26px 26px; }
-  .detail-body p.intro { margin-bottom: 16px; }
+  .detail-cat-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .detail[data-category="internship"]      { --cat-color: var(--intern); }
+  .detail[data-category="extracurricular"] { --cat-color: var(--extra); }
+  .detail[data-category="project"]         { --cat-color: var(--proj); }
+  .detail-org { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+  .detail-meta {
+    display: flex; flex-wrap: wrap; gap: 6px 16px;
+    font-size: 13px; color: var(--muted);
+  }
+  .detail-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .detail-meta svg { flex: 0 0 auto; opacity: .75; }
+  .detail-body { padding: 20px 26px 26px; }
+  .detail-body p.intro { font-size: 15px; margin-bottom: 4px; }
   .detail-body h4 {
-    font-size: 13px; text-transform: uppercase; letter-spacing: .8px;
+    font-size: 12.5px; text-transform: uppercase; letter-spacing: .08em;
     color: var(--navy);
-    margin: 20px 0 10px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid var(--line);
+    margin: 24px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
   }
-  .detail-body h4:first-of-type { margin-top: 0; }
-  .detail-body h5 { font-size: 14.5px; color: var(--navy-deep); margin: 16px 0 6px; }
   .detail-body ul { list-style: none; }
   .detail-body li {
     position: relative;
-    padding-left: 20px; margin-bottom: 8px; font-size: 14px;
+    padding-left: 18px; margin-bottom: 8px; font-size: 14.5px;
   }
   .detail-body li::before {
     content: "";
-    position: absolute; left: 2px; top: 9px;
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--navy); opacity: .5;
+    position: absolute; left: 2px; top: 10px;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--muted);
   }
-  .detail-body li strong { color: var(--navy-deep); }
+  .detail-body li strong { color: var(--navy-deep); font-weight: 600; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .chip {
     background: var(--bg);
     border: 1px solid var(--line);
     color: var(--ink);
-    font-size: 12.5px; font-weight: 600;
-    padding: 4px 12px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 500;
+    padding: 5px 12px; border-radius: var(--radius-sm);
   }
   footer {
+    max-width: 1080px;
+    margin: 40px auto 0;
     text-align: center; color: var(--muted);
-    font-size: 12.5px; padding: 24px;
+    font-size: 13px; padding: 26px 24px 40px;
     border-top: 1px solid var(--line);
   }
+  footer a { color: var(--muted); text-underline-offset: 3px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- Narrow screens ---------- */
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; gap: 26px; }
+    .hero-inner { justify-content: center; text-align: center; }
+    .hero-inner .lede { margin-left: auto; margin-right: auto; }
+    .contact, .hero-actions { justify-content: center; }
+    .edu-card { text-align: left; }
+    .details { position: static; }
+    .tl-card:hover { transform: none; }
+  }
+
+  /* ---------- Reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+    }
+    .tl-card:hover { transform: none; }
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .skip, .tabs, .tl-hint, .hero-actions, .photo-fallback { display: none !important; }
+    .detail-cat { color: #000 !important; }
+    .detail-cat-dot { background: #000 !important; }
+    .hero { background: none !important; color: #000 !important; padding: 0 0 12px; }
+    .hero-info h1, .hero-info .tagline, .hero-info .lede { color: #000 !important; }
+    .contact, .contact a { color: #000 !important; }
+    .contact a { text-decoration: none; }
+    .edu-card { background: none !important; border: 1px solid #bbb; color: #000 !important; max-width: none; }
+    .edu-card strong, .edu-line { color: #000 !important; }
+    .photo-wrap { border-color: #bbb; }
+    .page { max-width: none; padding: 16px 0 0; }
+    .layout { display: block; }
+    .timeline { padding-left: 0; }
+    .timeline::before, .tl-item::before { display: none; }
+    .details { position: static; margin-top: 18px; }
+    .detail { display: block !important; }
+    .detail + .detail { margin-top: 14px; }
+    .tl-card, .detail-card { box-shadow: none; break-inside: avoid; }
+    .tl-card { transform: none !important; }
+    .detail-card { border: 1px solid #bbb; }
+    footer { border-top: 1px solid #bbb; }
+  }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "YUEN Yu Yung (Emma)",
+  "email": "mailto:yyyuen@connect.ust.hk",
+  "description": "Decision Analytics and Artificial Intelligence student at HKUST.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Hong Kong" },
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "The Hong Kong University of Science and Technology"
+  },
+  "knowsAbout": ["Decision Analytics", "Artificial Intelligence", "Mathematics", "Mixed-Integer Programming", "Process Automation", "Business Intelligence"],
+  "sameAs": ["https://github.com/emmayuenyuyung", "https://emmayuenyuyung.github.io/Personal-Website/"]
+}
+</script>
+<script>document.documentElement.className += ' js';</script>
+<noscript><style>.tabs { display: none; }</style></noscript>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- ================= HERO ================= -->
 <header class="hero">
   <div class="hero-inner">
-    <div class="photo-wrap">
-      <!-- Photo placeholder: drop a file named "profile.jpg" (or edit src below) in this folder -->
-      <img id="profile-photo" src="profile.jpg" alt="YUEN Yu Yung (Emma)"
-           onerror="this.style.display='none';document.getElementById('photo-fallback').style.display='flex';">
-      <div class="photo-fallback" id="photo-fallback" style="display:none">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="8" r="4"/>
-          <path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>
-        </svg>
-        <span>Add profile.jpg</span>
-      </div>
+    <div class="photo-wrap" id="photo-wrap">
+      <img id="profile-photo" src="profile.jpg"
+           srcset="profile-168.jpg 168w, profile-336.jpg 336w, profile-504.jpg 504w" sizes="168px"
+           width="168" height="168" decoding="async" fetchpriority="high"
+           alt="Portrait of Emma Yuen">
+      <div class="photo-fallback" aria-hidden="true">EY</div>
     </div>
     <div class="hero-info">
       <h1>YUEN Yu Yung (Emma)</h1>
       <p class="tagline">Decision Analytics · Artificial Intelligence · Mathematics</p>
+      <p class="lede">Final-year Decision Analytics student at HKUST. A Towngas-partnered optimisation project delivered a 41% cost saving in simulation and is now in live use.</p>
       <ul class="contact">
-        <li>&#9993; <a href="mailto:yyyuen@connect.ust.hk">yyyuen@connect.ust.hk</a></li>
-        <li>&#9742; +852 6287 4561</li>
-        <li>&#128506; Hong Kong</li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6 9-6"/></svg>
+          <a href="mailto:yyyuen@connect.ust.hk">yyyuen@connect.ust.hk</a>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg>
+          <a href="tel:+85262874561">+852 6287 4561</a>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Hong Kong</span>
+        </li>
       </ul>
       <div class="edu-card">
         <strong>The Hong Kong University of Science and Technology</strong>
         <div class="edu-line">Sep 2022 – Jun 2027 (Expected) · Expected First Class Honours</div>
-        <div class="edu-line">Year 4 in Engineering in Decision Analytics (Financial Engineering Track) with Extended Major in Artificial Intelligence · Minor in Mathematics</div>
+        <div class="edu-line">Year 5 in Engineering in Decision Analytics (Financial Engineering Track) with Extended Major in Artificial Intelligence · Minor in Mathematics</div>
         <div class="edu-line">Major CGA 3.626 · General CGA 3.473</div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="cv.pdf" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.5v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4.5 20h15"/></svg>
+          Download CV (PDF)
+        </a>
+        <!-- LinkedIn is deliberately not linked, per your instruction. Add a button here when you want it shown. -->
+        <a class="btn btn-ghost" href="https://github.com/emmayuenyuyung" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          GitHub<span class="visually-hidden"> (opens in a new tab)</span>
+        </a>
       </div>
     </div>
   </div>
 </header>
 
-<div class="page">
+<main class="page" id="main">
 
-  <!-- ================= FILTER TABS ================= -->
-  <nav class="tabs" id="filter-tabs" aria-label="Filter achievements">
-    <button class="tab active" data-filter="all">All</button>
-    <button class="tab" data-filter="internship">Internships</button>
-    <button class="tab" data-filter="extracurricular">Extracurriculars</button>
-    <button class="tab" data-filter="project">Final Year Project</button>
-  </nav>
+  <h2 class="section-heading">Achievements</h2>
+
+  <!-- ================= FILTER ================= -->
+  <div class="tabs" role="group" aria-label="Filter achievements by category">
+    <button class="tab" type="button" data-filter="all" aria-pressed="true" aria-controls="timeline">All</button>
+    <button class="tab" type="button" data-filter="internship" aria-pressed="false" aria-controls="timeline">Internships</button>
+    <button class="tab" type="button" data-filter="extracurricular" aria-pressed="false" aria-controls="timeline">Extracurriculars</button>
+    <button class="tab" type="button" data-filter="project" aria-pressed="false" aria-controls="timeline">Final Year Project</button>
+  </div>
 
   <div class="layout">
 
-    <!-- ================= TIMELINE ================= -->
-    <section class="timeline" id="timeline" aria-label="Achievement timeline">
+    <!-- ================= TIMELINE (newest first) ================= -->
+    <section aria-label="Achievement timeline">
+      <ul class="timeline" id="timeline">
 
-      <div class="tl-item" data-category="extracurricular" data-target="detail-orchestra" tabindex="0" role="button" aria-label="Show details: Philharmonic Orchestra">
-        <div class="tl-card">
-          <span class="tl-period">Apr 2023 – Apr 2024</span>
-          <h3>Internal Vice President</h3>
-          <p class="tl-org">University Philharmonic Orchestra · HKUSTSU</p>
-          <span class="tl-cat">Extracurricular · Leadership</span>
-        </div>
-      </div>
+        <li class="tl-item" data-category="internship">
+          <a class="tl-card" href="#detail-mtr" aria-controls="detail-mtr">
+            <span class="tl-period">Jun 2026 – Aug 2026</span>
+            <span class="tl-title">Summer Intern — Safety &amp; Quality</span>
+            <span class="tl-org">MTR Corporation Limited · Shenzhen Hub · HYAB Program</span>
+            <span class="tl-metric">Fine BI dashboards for Line 4 and Line 13 · monthly reporting automated</span>
+            <span class="tl-foot">
+              <span class="tl-cat">Internship · Business Intelligence</span>
+              <span class="tl-hint" aria-hidden="true">
+                <span class="tl-hint-text">Details</span>
+                <svg class="tl-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
 
-      <div class="tl-item" data-category="extracurricular" data-target="detail-iedass" tabindex="0" role="button" aria-label="Show details: IEDASS">
-        <div class="tl-card">
-          <span class="tl-period">Apr 2024 – Apr 2025</span>
-          <h3>General Secretary, IEDASS</h3>
-          <p class="tl-org">Industrial Engineering &amp; Decision Analytics Students&rsquo; Society · HKUSTSU</p>
-          <span class="tl-cat">Extracurricular · Leadership</span>
-        </div>
-      </div>
+        <li class="tl-item" data-category="project">
+          <a class="tl-card" href="#detail-fyp" aria-controls="detail-fyp">
+            <span class="tl-period">Sep 2025 – May 2026</span>
+            <span class="tl-title">Inventory Allocation Optimisation for Towngas</span>
+            <span class="tl-org">HKUST · Final Year Project, partnered with Towngas · team of 3</span>
+            <span class="tl-metric">41% cost saving in simulation · prototype adopted by Towngas for live use</span>
+            <span class="tl-foot">
+              <span class="tl-cat">Final Year Project · Optimisation</span>
+              <span class="tl-hint" aria-hidden="true">
+                <span class="tl-hint-text">Details</span>
+                <svg class="tl-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
 
-      <div class="tl-item" data-category="extracurricular" data-target="detail-mentor" tabindex="0" role="button" aria-label="Show details: Peer Mentor">
-        <div class="tl-card">
-          <span class="tl-period">Apr 2024 – Apr 2027</span>
-          <h3>Peer Mentor</h3>
-          <p class="tl-org">Centre for Engineering Education Innovation, School of Engineering · HKUST</p>
-          <span class="tl-cat">Extracurricular · Mentoring</span>
-        </div>
-      </div>
+        <li class="tl-item" data-category="internship">
+          <a class="tl-card" href="#detail-towngas" aria-controls="detail-towngas">
+            <span class="tl-period">Jul 2025 – Jan 2026</span>
+            <span class="tl-title">Industrial Trainee — Logistics</span>
+            <span class="tl-org">The Hong Kong and China Gas Company (Towngas)</span>
+            <span class="tl-metric">PowerApps system covering ~100 items · used daily by 100+ users</span>
+            <span class="tl-foot">
+              <span class="tl-cat">Internship · 7 Months · Automation</span>
+              <span class="tl-hint" aria-hidden="true">
+                <span class="tl-hint-text">Details</span>
+                <svg class="tl-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
 
-      <div class="tl-item" data-category="internship" data-target="detail-dksh" tabindex="0" role="button" aria-label="Show details: DKSH">
-        <div class="tl-card">
-          <span class="tl-period">Jul 2024 – Aug 2024</span>
-          <h3>Supply Chain Management Intern</h3>
-          <p class="tl-org">DKSH</p>
-          <span class="tl-cat">Internship · Automation</span>
-        </div>
-      </div>
+        <li class="tl-item" data-category="internship">
+          <a class="tl-card" href="#detail-dksh" aria-controls="detail-dksh">
+            <span class="tl-period">Jul 2024 – Aug 2024</span>
+            <span class="tl-title">Supply Chain Management Intern</span>
+            <span class="tl-org">DKSH</span>
+            <span class="tl-metric">Half-day monthly consolidation process cut to minutes by a VBA tool</span>
+            <span class="tl-foot">
+              <span class="tl-cat">Internship · Automation</span>
+              <span class="tl-hint" aria-hidden="true">
+                <span class="tl-hint-text">Details</span>
+                <svg class="tl-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
 
-      <div class="tl-item" data-category="internship" data-target="detail-towngas" tabindex="0" role="button" aria-label="Show details: Towngas">
-        <div class="tl-card">
-          <span class="tl-period">Jul 2025 – Jan 2026</span>
-          <h3>Industrial Trainee</h3>
-          <p class="tl-org">The Hong Kong and China Gas Company (Towngas)</p>
-          <span class="tl-cat">Internship · 7 Months</span>
-        </div>
-      </div>
+        <li class="tl-item" data-category="extracurricular">
+          <a class="tl-card" href="#detail-mentor" aria-controls="detail-mentor">
+            <span class="tl-period">Apr 2024 – Apr 2027 · Ongoing</span>
+            <span class="tl-title">Peer Mentor</span>
+            <span class="tl-org">Centre for Engineering Education Innovation, School of Engineering · HKUST</span>
+            <span class="tl-metric">~10 first-year students supported each year</span>
+            <span class="tl-foot">
+              <span class="tl-cat">Extracurricular · Mentoring</span>
+              <span class="tl-hint" aria-hidden="true">
+                <span class="tl-hint-text">Details</span>
+                <svg class="tl-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
 
-      <div class="tl-item" data-category="project" data-target="detail-fyp" tabindex="0" role="button" aria-label="Show details: Final Year Project">
-        <div class="tl-card">
-          <span class="tl-period">Sep 2025 – May 2026</span>
-          <h3>Final Year Project — Inventory Allocation Optimisation for Towngas</h3>
-          <p class="tl-org">HKUST · partnered with Towngas</p>
-          <span class="tl-cat">Final Year Project · Optimisation</span>
-        </div>
-      </div>
+        <li class="tl-item" data-category="extracurricular">
+          <a class="tl-card" href="#detail-iedass" aria-controls="detail-iedass">
+            <span class="tl-period">Apr 2024 – Apr 2025</span>
+            <span class="tl-title">General Secretary, IEDASS</span>
+            <span class="tl-org">Industrial Engineering &amp; Decision Analytics Students&rsquo; Society · HKUSTSU</span>
+            <span class="tl-metric">3-day-2-night O Camp · represented the major at Open Day</span>
+            <span class="tl-foot">
+              <span class="tl-cat">Extracurricular · Leadership</span>
+              <span class="tl-hint" aria-hidden="true">
+                <span class="tl-hint-text">Details</span>
+                <svg class="tl-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
 
-      <div class="tl-item" data-category="internship" data-target="detail-mtr" tabindex="0" role="button" aria-label="Show details: MTR">
-        <div class="tl-card">
-          <span class="tl-period">Jun 2026 – Aug 2026</span>
-          <h3>Summer Intern — Safety &amp; Quality</h3>
-          <p class="tl-org">MTR Corporation Limited (Shenzhen Hub · HYAB Program)</p>
-          <span class="tl-cat">Internship · Business Intelligence</span>
-        </div>
-      </div>
+        <li class="tl-item" data-category="extracurricular">
+          <a class="tl-card" href="#detail-orchestra" aria-controls="detail-orchestra">
+            <span class="tl-period">Apr 2023 – Apr 2024</span>
+            <span class="tl-title">Internal Vice President</span>
+            <span class="tl-org">University Philharmonic Orchestra · HKUSTSU</span>
+            <span class="tl-metric">4 concerts · 1,000+ cumulative audience · 50+ auditions managed</span>
+            <span class="tl-foot">
+              <span class="tl-cat">Extracurricular · Leadership</span>
+              <span class="tl-hint" aria-hidden="true">
+                <span class="tl-hint-text">Details</span>
+                <svg class="tl-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </span>
+          </a>
+        </li>
 
-      <div class="tl-empty" id="tl-empty">No items in this category.</div>
+      </ul>
     </section>
 
-    <!-- ================= DETAILS PANEL ================= -->
-    <aside class="details">
+    <!-- ================= DETAILS ================= -->
+    <aside class="details" id="details" aria-label="Achievement details">
 
-      <div class="placeholder" id="details-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="3" y="4" width="18" height="16" rx="2"/>
-          <path d="M8 10h8M8 14h5"/>
-        </svg>
-        <p>Select an item on the timeline to see details</p>
-      </div>
-
-      <!-- Orchestra -->
-      <section class="detail" id="detail-orchestra">
+      <!-- MTR -->
+      <section class="detail" id="detail-mtr" data-category="internship" tabindex="-1" aria-labelledby="detail-mtr-title">
         <div class="detail-card">
           <div class="detail-head">
-            <span class="cat-badge extracurricular">Extracurricular</span>
-            <h2>Internal Vice President — University Philharmonic Orchestra</h2>
-            <p class="detail-org">HKUST Students&rsquo; Union · University Philharmonic Orchestra</p>
-            <div class="detail-meta"><span>&#128197; Apr 2023 – Apr 2024</span><span>&#128205; Hong Kong</span></div>
+            <h3 id="detail-mtr-title">Summer Intern — Safety &amp; Quality</h3>
+            <p class="detail-org">MTR Corporation Limited · Shenzhen Hub · HYAB Program</p>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="detail-cat-dot" aria-hidden="true"></span>Internship</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 10h17"/></svg> Jun 2026 – Aug 2026</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Shenzhen, Mainland China</span>
+            </div>
           </div>
           <div class="detail-body">
-            <p class="intro">Led logistics, communications, and backstage operations for four concerts, each featuring 80+ musicians on stage and 20+ backstage crew, reaching 1,000+ audience members cumulatively.</p>
-            <h4>Highlights</h4>
+            <p class="intro">Participated in the HYAB programme — a collaboration between MTR and the Government that sends Hong Kong university students to Mainland China — based in Shenzhen. Carried out business-intelligence work with Fine BI (chosen over Power BI to match Mainland data-security requirements).</p>
+            <h4>Main Project — Passenger Injury Dashboards</h4>
             <ul>
-              <li>End-to-end coordination of events, including venue setup, equipment arrangement, scheduling, and on-site troubleshooting.</li>
-              <li>Single-handedly managed 50+ auditions and organised a 20-person orientation day for new members.</li>
-              <li>Coordinated cross-team collaboration among performers, backstage crew, and external parties such as venue operators and equipment suppliers.</li>
-              <li>Managed internal communications and member engagement throughout the season.</li>
+              <li>Built Fine BI dashboards of monthly passenger injury data covering station, injury type (e.g. elevator, platform), age &amp; sex distribution, and KPI impact — incidents where passengers were not hurt, or excluded for other reasons, do not count.</li>
+              <li>Completed dashboards for Line 4 and Line 13.</li>
+              <li>Monthly report preparation no longer needs manual Excel charting, reducing the workload of full-time staff.</li>
+              <li>Enabled deeper traceability and comparison across months and stations.</li>
+            </ul>
+            <h4>MaxKB AI Chatbot Data Cleaning</h4>
+            <ul>
+              <li>Performed data cleaning for MaxKB, an AI chatbot trained on specific documents covering incident procedures (e.g. heavy rain, signal faults — who handles them and each department&rsquo;s responsibilities).</li>
+              <li>Goal: a quick-reference chatbot for workers, making drilling arrangements easier and reference faster during real incidents.</li>
+              <li>Gained insight into the company&rsquo;s current technology projects and market solutions.</li>
+            </ul>
+            <h4>Training, Exposure &amp; Resources</h4>
+            <ul>
+              <li>Completed 1 week of training in Hong Kong and 1 week in Shenzhen, plus department talks.</li>
+              <li>Visited stations, depots, and the Operations Control Centre (OCC).</li>
+              <li>Built a comprehensive understanding of MTR&rsquo;s business model, digitalisation strategy, and talent development culture.</li>
+            </ul>
+            <h4>Cross-Border Working</h4>
+            <ul>
+              <li>Operated in a Hong Kong-based company&rsquo;s Mainland office, observing how business practices, safety protocols, and digitalisation adapt to Mainland regulatory and operational requirements — sharpening adaptability, cultural awareness, and cross-border communication, and mastering Fine BI quickly.</li>
+              <li>Separately immersed in the Mainland academic and social environment through involvement with Tsinghua University (Beijing), gaining an understanding of Mainland universities (the top-down student–university relationship versus Hong Kong).</li>
             </ul>
             <h4>Skills</h4>
             <div class="chips">
-              <span class="chip">Event Management</span><span class="chip">Stakeholder Coordination</span><span class="chip">Team Leadership</span><span class="chip">Communication</span><span class="chip">Time Management</span><span class="chip">Problem-Solving</span>
+              <span class="chip">Fine BI</span><span class="chip">Business Intelligence</span><span class="chip">Data Cleaning</span><span class="chip">AI Applications</span><span class="chip">Cross-Cultural Communication</span><span class="chip">Adaptability</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- IEDASS -->
-      <section class="detail" id="detail-iedass">
+      <!-- FYP -->
+      <section class="detail" id="detail-fyp" data-category="project" tabindex="-1" aria-labelledby="detail-fyp-title">
         <div class="detail-card">
           <div class="detail-head">
-            <span class="cat-badge extracurricular">Extracurricular</span>
-            <h2>General Secretary — IEDASS</h2>
-            <p class="detail-org">Industrial Engineering &amp; Decision Analytics Students&rsquo; Society · HKUSTSU</p>
-            <div class="detail-meta"><span>&#128197; Apr 2024 – Apr 2025</span><span>&#128205; Hong Kong</span></div>
-          </div>
-          <div class="detail-body">
-            <p class="intro">Organised a 3-day-2-night O Camp and various social events, and represented the major department at Open Day / Info Day, engaging prospective students and their parents.</p>
-            <h4>Highlights</h4>
-            <ul>
-              <li>Planned and delivered a 3-day-2-night O Camp and dinner gatherings throughout the year.</li>
-              <li>Represented the department at Open Day / Info Day, engaging parents and answering inquiries about the major.</li>
-              <li>Distributed souvenirs and promoted the major to prospective students.</li>
-              <li>Supported departmental activities and events as helper and coordinator.</li>
-            </ul>
-            <h4>Skills</h4>
-            <div class="chips">
-              <span class="chip">Event Organisation</span><span class="chip">Public Engagement</span><span class="chip">Communication</span><span class="chip">Coordination</span>
+            <h3 id="detail-fyp-title">Inventory Allocation Optimisation for Towngas</h3>
+            <p class="detail-org">HKUST · Final Year Project completed in Year 4, partnered with Towngas · team of 3</p>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="detail-cat-dot" aria-hidden="true"></span>Final Year Project</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 10h17"/></svg> Sep 2025 – May 2026</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Hong Kong</span>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Peer Mentor -->
-      <section class="detail" id="detail-mentor">
-        <div class="detail-card">
-          <div class="detail-head">
-            <span class="cat-badge extracurricular">Extracurricular</span>
-            <h2>Peer Mentor</h2>
-            <p class="detail-org">Centre for Engineering Education Innovation, School of Engineering · HKUST</p>
-            <div class="detail-meta"><span>&#128197; Apr 2024 – Apr 2027</span><span>&#128205; Hong Kong</span></div>
-          </div>
           <div class="detail-body">
-            <p class="intro">Guided ~10 first-year students annually through their transition to university life, covering course selection, academic adaptation, and personal challenges.</p>
+            <p class="intro">Solved a real-life inventory allocation problem with Towngas using a Rolling Horizon Mixed-Integer Programming approach, achieving a 41% cost saving in a one-month simulation and building a Streamlit prototype that Towngas adopted as a live decision-support tool.</p>
             <h4>Highlights</h4>
             <ul>
-              <li>Guided ~10 first-year students annually on course selection and university-life adaptation.</li>
-              <li>Conducted regular check-ins and answered ad-hoc questions throughout the semesters.</li>
-              <li>Supported registration-day booths and the major-selection helpdesk for students.</li>
-              <li>Provided post-midterm peer consultation for students needing academic or personal advice.</li>
+              <li>Applied a Rolling Horizon Mixed-Integer Programming model — a technique more common in academic research than in day-to-day logistics.</li>
+              <li>Engaged in regular dialogue with Towngas stakeholders and tailored the model explicitly to their operational constraints and business logic rather than delivering a generic solution.</li>
+              <li>Built an accessible, interactive Streamlit decision-support prototype.</li>
+              <li>Towngas subsequently adopted the prototype for live use.</li>
+              <li>Combines rigorous quantitative modelling with practical, user-centred design.</li>
             </ul>
             <h4>Skills</h4>
             <div class="chips">
-              <span class="chip">Mentoring</span><span class="chip">Communication</span><span class="chip">Empathy</span><span class="chip">Student Support</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- DKSH -->
-      <section class="detail" id="detail-dksh">
-        <div class="detail-card">
-          <div class="detail-head">
-            <span class="cat-badge internship">Internship</span>
-            <h2>Supply Chain Management Intern</h2>
-            <p class="detail-org">DKSH</p>
-            <div class="detail-meta"><span>&#128197; Jul 2024 – Aug 2024</span><span>&#128205; Hong Kong</span></div>
-          </div>
-          <div class="detail-body">
-            <p class="intro">Developed a VBA tool that automates monthly data consolidation from multiple Excel files, reducing a half-day manual process to minutes.</p>
-            <h4>Highlights</h4>
-            <ul>
-              <li>Built a VBA automation tool cutting a half-day monthly consolidation process down to minutes.</li>
-              <li>Eliminated repetitive copy-pasting and reduced the risk of human error.</li>
-              <li>Authored a comprehensive SOP documenting a colleague&rsquo;s VBA maintenance workflow to ensure knowledge continuity.</li>
-              <li>Conducted a deep-dive code review while writing the SOP and proactively refactored redundant logic for efficiency and maintainability.</li>
-              <li>Provided ad-hoc support by troubleshooting and resolving minor VBA errors to keep existing automation stable.</li>
-            </ul>
-            <h4>Skills</h4>
-            <div class="chips">
-              <span class="chip">VBA</span><span class="chip">Excel</span><span class="chip">Process Automation</span><span class="chip">Documentation</span><span class="chip">Code Review</span>
+              <span class="chip">Mixed-Integer Programming</span><span class="chip">Optimisation</span><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">Stakeholder Communication</span><span class="chip">Modelling</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Towngas -->
-      <section class="detail" id="detail-towngas">
+      <section class="detail" id="detail-towngas" data-category="internship" tabindex="-1" aria-labelledby="detail-towngas-title">
         <div class="detail-card">
           <div class="detail-head">
-            <span class="cat-badge internship">Internship</span>
-            <h2>Industrial Trainee — Logistics</h2>
+            <h3 id="detail-towngas-title">Industrial Trainee — Logistics</h3>
             <p class="detail-org">The Hong Kong and China Gas Company (Towngas)</p>
-            <div class="detail-meta"><span>&#128197; Jul 2025 – Jan 2026</span><span>&#128205; Hong Kong</span><span>&#9203; 7 months</span></div>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="detail-cat-dot" aria-hidden="true"></span>Internship</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 10h17"/></svg> Jul 2025 – Jan 2026</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg> 7 months</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Hong Kong</span>
+            </div>
           </div>
           <div class="detail-body">
             <p class="intro">Worked with the logistics team overseeing warehouses (the department covers procurement and warehouse operations, with exposure to tendering), delivering automation projects that are now used daily by 100+ users.</p>
@@ -544,72 +720,119 @@
         </div>
       </section>
 
-      <!-- FYP -->
-      <section class="detail" id="detail-fyp">
+      <!-- DKSH -->
+      <section class="detail" id="detail-dksh" data-category="internship" tabindex="-1" aria-labelledby="detail-dksh-title">
         <div class="detail-card">
           <div class="detail-head">
-            <span class="cat-badge project">Final Year Project</span>
-            <h2>Inventory Allocation Optimisation for Towngas</h2>
-            <p class="detail-org">HKUST · Final Year Project, partnered with Towngas · team of 3</p>
-            <div class="detail-meta"><span>&#128197; Sep 2025 – May 2026</span><span>&#128205; Hong Kong</span></div>
+            <h3 id="detail-dksh-title">Supply Chain Management Intern</h3>
+            <p class="detail-org">DKSH</p>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="detail-cat-dot" aria-hidden="true"></span>Internship</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 10h17"/></svg> Jul 2024 – Aug 2024</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Hong Kong</span>
+            </div>
           </div>
           <div class="detail-body">
-            <p class="intro">Solved a real-life inventory allocation problem with Towngas using a Rolling Horizon Mixed-Integer Programming approach, achieving a 41% cost saving in a one-month simulation and building a Streamlit prototype that Towngas adopted as a live decision-support tool.</p>
+            <p class="intro">Developed a VBA tool that automates monthly data consolidation from multiple Excel files, reducing a half-day manual process to minutes.</p>
             <h4>Highlights</h4>
             <ul>
-              <li>Applied a Rolling Horizon Mixed-Integer Programming model — a technique more common in academic research than in day-to-day logistics.</li>
-              <li>Engaged in regular dialogue with Towngas stakeholders and tailored the model explicitly to their operational constraints and business logic rather than delivering a generic solution.</li>
-              <li>Built an accessible, interactive Streamlit decision-support prototype.</li>
-              <li>Achieved a 41% cost saving in simulation; Towngas subsequently adopted the prototype for live use.</li>
-              <li>Combines rigorous quantitative modelling with practical, user-centred design.</li>
+              <li>Built a VBA automation tool cutting a half-day monthly consolidation process down to minutes.</li>
+              <li>Eliminated repetitive copy-pasting and reduced the risk of human error.</li>
+              <li>Authored a comprehensive SOP documenting a colleague&rsquo;s VBA maintenance workflow to ensure knowledge continuity.</li>
+              <li>Conducted a deep-dive code review while writing the SOP and proactively refactored redundant logic for efficiency and maintainability.</li>
+              <li>Provided ad-hoc support by troubleshooting and resolving minor VBA errors to keep existing automation stable.</li>
             </ul>
             <h4>Skills</h4>
             <div class="chips">
-              <span class="chip">Mixed-Integer Programming</span><span class="chip">Optimisation</span><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">Stakeholder Communication</span><span class="chip">Modelling</span>
+              <span class="chip">VBA</span><span class="chip">Excel</span><span class="chip">Process Automation</span><span class="chip">Documentation</span><span class="chip">Code Review</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- MTR -->
-      <section class="detail" id="detail-mtr">
+      <!-- Peer Mentor -->
+      <section class="detail" id="detail-mentor" data-category="extracurricular" tabindex="-1" aria-labelledby="detail-mentor-title">
         <div class="detail-card">
           <div class="detail-head">
-            <span class="cat-badge internship">Internship</span>
-            <h2>Summer Intern — Safety &amp; Quality</h2>
-            <p class="detail-org">MTR Corporation Limited · Shenzhen Hub · HYAB Program</p>
-            <div class="detail-meta"><span>&#128197; Jun 2026 – Aug 2026</span><span>&#128205; Shenzhen, Mainland China</span></div>
+            <h3 id="detail-mentor-title">Peer Mentor</h3>
+            <p class="detail-org">Centre for Engineering Education Innovation, School of Engineering · HKUST</p>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="detail-cat-dot" aria-hidden="true"></span>Extracurricular</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 10h17"/></svg> Apr 2024 – Apr 2027</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg> Ongoing</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Hong Kong</span>
+            </div>
           </div>
           <div class="detail-body">
-            <p class="intro">Participated in the HYAB programme — a collaboration between MTR and the Government that sends Hong Kong university students to Mainland China — based in Shenzhen. Carried out business-intelligence work with Fine BI (chosen over Power BI to match Mainland data-security requirements).</p>
-            <h4>Main Project — Passenger Injury Dashboards</h4>
+            <p class="intro">Guiding ~10 first-year students annually through their transition to university life, covering course selection, academic adaptation, and personal challenges.</p>
+            <h4>Highlights</h4>
             <ul>
-              <li>Built Fine BI dashboards of monthly passenger injury data covering station, injury type (e.g. elevator, platform), age &amp; sex distribution, and KPI impact — incidents where passengers were not hurt, or excluded for other reasons, do not count.</li>
-              <li>Completed dashboards for Line 4 and Line 13.</li>
-              <li>Monthly report preparation no longer needs manual Excel charting, reducing the workload of full-time staff.</li>
-              <li>Enabled deeper traceability and comparison across months and stations.</li>
-            </ul>
-            <h4>MaxKB AI Chatbot Data Cleaning</h4>
-            <ul>
-              <li>Performed data cleaning for MaxKB, an AI chatbot trained on specific documents covering incident procedures (e.g. heavy rain, signal faults — who handles them and each department&rsquo;s responsibilities).</li>
-              <li>Goal: a quick-reference chatbot for workers, making drilling arrangements easier and reference faster during real incidents.</li>
-              <li>Gained insight into the company&rsquo;s current technology projects and market solutions.</li>
-            </ul>
-            <h4>Training, Exposure &amp; Resources</h4>
-            <ul>
-              <li>Completed 1 week of training in Hong Kong and 1 week in Shenzhen, plus department talks.</li>
-              <li>Visited stations, depots, and the Operations Control Centre (OCC).</li>
-              <li>Built a comprehensive understanding of MTR&rsquo;s business model, digitalisation strategy, and talent development culture.</li>
-            </ul>
-            <h4>Cross-Border &amp; Cultural Exposure</h4>
-            <ul>
-              <li>Operated in a Hong Kong-based company&rsquo;s Mainland office, observing how business practices, safety protocols, and digitalisation adapt to Mainland regulatory and operational requirements.</li>
-              <li>Sharpened adaptability, cultural awareness, and cross-border communication; quickly mastered Fine BI.</li>
-              <li>Separately immersed in the Mainland academic and social environment through involvement with Tsinghua University (Beijing) — friendships, campus activities, and extensive travel — and gained an understanding of Mainland universities (the top-down student-university relationship versus Hong Kong).</li>
+              <li>Guide ~10 first-year students annually on course selection and university-life adaptation.</li>
+              <li>Conduct regular check-ins and answer ad-hoc questions throughout the semesters.</li>
+              <li>Support registration-day booths and the major-selection helpdesk for students.</li>
+              <li>Provide post-midterm peer consultation for students needing academic or personal advice.</li>
             </ul>
             <h4>Skills</h4>
             <div class="chips">
-              <span class="chip">Fine BI</span><span class="chip">Business Intelligence</span><span class="chip">Data Cleaning</span><span class="chip">AI Applications</span><span class="chip">Cross-Cultural Communication</span><span class="chip">Adaptability</span>
+              <span class="chip">Mentoring</span><span class="chip">Communication</span><span class="chip">Empathy</span><span class="chip">Student Support</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IEDASS -->
+      <section class="detail" id="detail-iedass" data-category="extracurricular" tabindex="-1" aria-labelledby="detail-iedass-title">
+        <div class="detail-card">
+          <div class="detail-head">
+            <h3 id="detail-iedass-title">General Secretary, IEDASS</h3>
+            <p class="detail-org">Industrial Engineering &amp; Decision Analytics Students&rsquo; Society · HKUSTSU</p>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="detail-cat-dot" aria-hidden="true"></span>Extracurricular</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 10h17"/></svg> Apr 2024 – Apr 2025</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Hong Kong</span>
+            </div>
+          </div>
+          <div class="detail-body">
+            <p class="intro">Organised a 3-day-2-night O Camp and various social events, and represented the major department at Open Day / Info Day, engaging prospective students and their parents.</p>
+            <h4>Highlights</h4>
+            <ul>
+              <li>Planned and delivered a 3-day-2-night O Camp and dinner gatherings throughout the year.</li>
+              <li>Represented the department at Open Day / Info Day, engaging parents and answering inquiries about the major.</li>
+              <li>Distributed souvenirs and promoted the major to prospective students.</li>
+              <li>Supported departmental activities and events as helper and coordinator.</li>
+            </ul>
+            <h4>Skills</h4>
+            <div class="chips">
+              <span class="chip">Event Organisation</span><span class="chip">Public Engagement</span><span class="chip">Communication</span><span class="chip">Coordination</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Orchestra -->
+      <section class="detail" id="detail-orchestra" data-category="extracurricular" tabindex="-1" aria-labelledby="detail-orchestra-title">
+        <div class="detail-card">
+          <div class="detail-head">
+            <h3 id="detail-orchestra-title">Internal Vice President — University Philharmonic Orchestra</h3>
+            <p class="detail-org">HKUST Students&rsquo; Union · University Philharmonic Orchestra</p>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="detail-cat-dot" aria-hidden="true"></span>Extracurricular</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3.5v3M16 3.5v3M3.5 10h17"/></svg> Apr 2023 – Apr 2024</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Hong Kong</span>
+            </div>
+          </div>
+          <div class="detail-body">
+            <p class="intro">Led logistics, communications, and backstage operations for four concerts, each featuring 80+ musicians on stage and 20+ backstage crew, reaching 1,000+ audience members cumulatively.</p>
+            <h4>Highlights</h4>
+            <ul>
+              <li>End-to-end coordination of events, including venue setup, equipment arrangement, scheduling, and on-site troubleshooting.</li>
+              <li>Single-handedly managed 50+ auditions and organised a 20-person orientation day for new members.</li>
+              <li>Coordinated cross-team collaboration among performers, backstage crew, and external parties such as venue operators and equipment suppliers.</li>
+              <li>Managed internal communications and member engagement throughout the season.</li>
+            </ul>
+            <h4>Skills</h4>
+            <div class="chips">
+              <span class="chip">Event Management</span><span class="chip">Stakeholder Coordination</span><span class="chip">Team Leadership</span><span class="chip">Communication</span><span class="chip">Time Management</span><span class="chip">Problem-Solving</span>
             </div>
           </div>
         </div>
@@ -617,76 +840,143 @@
 
     </aside>
   </div>
+</main>
 
-  <footer>
-    <p>YUEN Yu Yung (Emma) · yyyuen@connect.ust.hk · Hong Kong</p>
-  </footer>
-</div>
+<footer>
+  <p>YUEN Yu Yung (Emma) · <a href="mailto:yyyuen@connect.ust.hk">yyyuen@connect.ust.hk</a> · <a href="tel:+85262874561">+852 6287 4561</a> · <a href="https://github.com/emmayuenyuyung" target="_blank" rel="noopener noreferrer">GitHub</a> · Hong Kong</p>
+</footer>
+
+<p class="visually-hidden" role="status" id="detail-status"></p>
 
 <script>
   (function () {
-    var tabs = document.querySelectorAll('#filter-tabs .tab');
-    var items = Array.prototype.slice.call(document.querySelectorAll('.tl-item'));
-    var empty = document.getElementById('tl-empty');
-    var placeholder = document.getElementById('details-placeholder');
+    var doc = document;
+    var tabs = doc.querySelectorAll('.tab');
+    var items = [].slice.call(doc.querySelectorAll('.tl-item'));
+    var sections = [].slice.call(doc.querySelectorAll('.detail'));
+    var panel = doc.getElementById('details');
+    var status = doc.getElementById('detail-status');
+    var narrow = window.matchMedia('(max-width: 860px)');
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     var activeItem = null;
 
-    function showDetail(item) {
-      if (activeItem) activeItem.classList.remove('active');
-      var target = item.getAttribute('data-target');
-      var sections = document.querySelectorAll('.detail');
-      for (var i = 0; i < sections.length; i++) {
-        sections[i].classList.remove('show');
+    function cardOf(item) { return item.querySelector('.tl-card'); }
+    function idOf(item) { return cardOf(item).getAttribute('aria-controls'); }
+    function sectionOf(item) { return doc.getElementById(idOf(item)); }
+    function itemFor(id) {
+      for (var i = 0; i < items.length; i++) { if (idOf(items[i]) === id) return items[i]; }
+      return null;
+    }
+    function setHint(item, selected) {
+      var hint = item.querySelector('.tl-hint-text');
+      if (hint) hint.textContent = selected ? 'Viewing' : 'Details';
+    }
+
+    function showDetail(item, opts) {
+      opts = opts || {};
+      if (!item) return;
+      var target = sectionOf(item);
+      if (!target) return;
+
+      for (var i = 0; i < items.length; i++) {
+        cardOf(items[i]).removeAttribute('aria-current');
+        setHint(items[i], false);
       }
-      var detail = document.getElementById(target);
-      if (detail) {
-        detail.classList.add('show');
-        placeholder.style.display = 'none';
-        item.classList.add('active');
-        activeItem = item;
+      for (var j = 0; j < sections.length; j++) sections[j].classList.remove('show');
+
+      cardOf(item).setAttribute('aria-current', 'true');
+      setHint(item, true);
+      target.classList.add('show');
+      activeItem = item;
+
+      var heading = target.querySelector('h3');
+      if (status) status.textContent = 'Showing details: ' + (heading ? heading.textContent : '');
+
+      if (opts.scroll && narrow.matches && panel) {
+        var top = panel.getBoundingClientRect().top + window.pageYOffset - 14;
+        window.scrollTo({ top: top, behavior: reduced.matches ? 'auto' : 'smooth' });
       }
     }
 
-    function applyFilter(filter) {
-      var visible = [];
+    function applyFilter(filter, opts) {
+      opts = opts || {};
+      var shown = [];
       for (var i = 0; i < items.length; i++) {
-        var show = (filter === 'all' || items[i].getAttribute('data-category') === filter);
-        items[i].style.display = show ? '' : 'none';
-        if (show) visible.push(items[i]);
+        var match = (filter === 'all' || items[i].getAttribute('data-category') === filter);
+        items[i].style.display = match ? '' : 'none';
+        if (match) shown.push(items[i]);
       }
-      if (visible.length === 0) {
-        empty.classList.add('show');
-        placeholder.style.display = '';
-        if (activeItem) { activeItem.classList.remove('active'); activeItem = null; }
-        var sections = document.querySelectorAll('.detail');
+      if (shown.length === 0) {
         for (var j = 0; j < sections.length; j++) sections[j].classList.remove('show');
+        activeItem = null;
         return;
       }
-      empty.classList.remove('show');
-      if (!activeItem || visible.indexOf(activeItem) === -1) {
-        showDetail(visible[0]);
-      }
+      var wanted = opts.prefer && shown.indexOf(opts.prefer) !== -1
+        ? opts.prefer
+        : (activeItem && shown.indexOf(activeItem) !== -1 ? activeItem : shown[0]);
+      showDetail(wanted, { scroll: false });
     }
 
+    function currentFilter() {
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i].getAttribute('aria-pressed') === 'true') return tabs[i].getAttribute('data-filter');
+      }
+      return 'all';
+    }
+
+    // --- Filters ---
     for (var t = 0; t < tabs.length; t++) {
       tabs[t].addEventListener('click', function () {
-        for (var k = 0; k < tabs.length; k++) tabs[k].classList.remove('active');
-        this.classList.add('active');
+        for (var k = 0; k < tabs.length; k++) tabs[k].setAttribute('aria-pressed', 'false');
+        this.setAttribute('aria-pressed', 'true');
         applyFilter(this.getAttribute('data-filter'));
+        var id = activeItem ? idOf(activeItem) : '';
+        if (id) setHash(id, true);
       });
     }
 
+    // --- Cards: real links, upgraded to master-detail when JS is available ---
     for (var m = 0; m < items.length; m++) {
-      items[m].addEventListener('click', function () { showDetail(this); });
-      items[m].addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
+      (function (item) {
+        cardOf(item).addEventListener('click', function (e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
           e.preventDefault();
-          showDetail(this);
-        }
-      });
+          showDetail(item, { scroll: true });
+          setHash(idOf(item), false);
+        });
+      })(items[m]);
     }
 
-    applyFilter('all');
+    // --- Deep links: #detail-x selects that entry; Back and Forward work ---
+    // pushState is wrapped: it can throw when the file is opened straight from disk (file://).
+    function setHash(id, replace) {
+      try {
+        if (replace) history.replaceState(null, '', '#' + id);
+        else history.pushState(null, '', '#' + id);
+      } catch (err) { /* file:// or an embedded context: deep links are simply unavailable */ }
+    }
+
+    function syncFromHash() {
+      var id = location.hash.replace(/^#/, '');
+      var item = id ? itemFor(id) : null;
+      if (item && item.style.display !== 'none') { showDetail(item, { scroll: false }); return; }
+      applyFilter(currentFilter());
+    }
+    window.addEventListener('popstate', syncFromHash);
+    window.addEventListener('hashchange', syncFromHash);
+
+    // --- Image fallback (moved out of inline onerror so it survives a strict CSP) ---
+    var photo = doc.getElementById('profile-photo');
+    var wrap = doc.getElementById('photo-wrap');
+    if (photo && wrap) {
+      var fail = function () { wrap.classList.add('is-fallback'); photo.style.display = 'none'; };
+      photo.addEventListener('error', fail);
+      if (photo.complete && photo.naturalWidth === 0) fail();
+    }
+
+    // --- Initial state: honour a deep link, otherwise the newest entry ---
+    var deepLink = itemFor(location.hash.replace(/^#/, ''));
+    applyFilter('all', { prefer: deepLink });
   })();
 </script>
 

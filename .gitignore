@@ -1,0 +1,8 @@
+# Impeccable design-tool state (critique snapshots) — not part of the published site
+.impeccable/
+
+# Local scratch files
+.cv-text.txt
+.tmp-*
+*.tmp.md
+_website-backup-*/
